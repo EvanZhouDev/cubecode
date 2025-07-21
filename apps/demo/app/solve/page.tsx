@@ -66,11 +66,15 @@ export default function SolvePage() {
 	};
 
 	return (
-		<div className="flex flex-col items-center gap-8 px-5">
-			<div className="text-gray-600 max-w-2xl text-center">
-				Enter the current state of the Rubik's cube to solve it. Ensure the
-				colors in the center of each side of your cube are matching with the
-				digital cube.
+		<div className="flex flex-col items-center gap-4 px-5">
+			<div className="text-gray-600 text-center text-xl max-w-2xl">
+				Get an algorithm to solve your Rubik's cube.
+			</div>
+			<div className="text-gray-500 text-center max-w-2xl">
+				Enter the colors <b>exactly as they are on your Rubik's cube</b> below
+				to get an algorithm to solve your cube. Turn your cube to face each side
+				you are coloring in. The direction that is facing up in the diagram
+				should face up in real life.
 			</div>
 
 			<CubePicker
@@ -79,18 +83,18 @@ export default function SolvePage() {
 				storageKey="solveCube"
 			/>
 
-			<div className="text-xs text-gray-500 max-w-2xl text-center">
-				The solving <b>will not work</b> if your colors are not exactly matching.
-			</div>
-			{!solution && (
-				<button
-					onClick={getAlgorithm}
-					disabled={isLoading}
-					className={`px-6 py-3 rounded-lg font-medium transition-colors bg-blue-600 text-white hover:bg-blue-700`}
-				>
-					{"Solve Cube"}
-				</button>
-			)}
+			<button
+				onClick={getAlgorithm}
+				disabled={isLoading}
+				className={`px-8 py-3 rounded-lg font-medium transition-colors text-black border-1 hover:bg-gray-200 disabled:opacity-50 w-2xl`}
+			>
+				Solve Cube
+			</button>
+
+			{/* <div className="text-xs text-gray-500 max-w-2xl text-center">
+				The solving <b>will not work</b> if your colors are not exactly
+				matching.
+			</div> */}
 
 			{solution && (
 				<div className="max-w-2xl w-full">
@@ -107,8 +111,10 @@ export default function SolvePage() {
 							title="Algorithm Visualization"
 						/>
 					</div>
-					<div className="text-xs text-gray-500 max-w-2xl text-center mt-5">
-						Change the colors on the cube above to get a new solution.
+					<div className="text-xs text-gray-500 max-w-2xl text-center mt-5 ">
+						You should do this algorithm with the white center on top and the
+						green center facing towards you.<br/>If the algorithm does not work, try again,
+						ensuring that all the colors are filled in correctly.
 					</div>
 				</div>
 			)}

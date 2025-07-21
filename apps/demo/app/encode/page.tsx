@@ -10,8 +10,7 @@ import { decode } from "punycode";
 type EncodingFormat = "cubecode" | "binary" | "ascii";
 
 export default function EncodePage() {
-	const [encodingFormat, setEncodingFormat] =
-		useState<EncodingFormat>("cubecode");
+	const [encodingFormat, setEncodingFormat] = useState<EncodingFormat>("ascii");
 	const [inputValue, setInputValue] = useState<string>("");
 	const [input, setInput] = useState<bigint>(0n);
 	const [encoded, setEncoded] = useState<string>("");
@@ -142,10 +141,14 @@ export default function EncodePage() {
 	};
 
 	return (
-		<div className="flex flex-col items-center gap-8 px-5">
-			<div className="text-gray-600 max-w-2xl text-center">
-				Enter a value to encode into a Rubik's cube configuration. Choose your
-				input format and enter the data you want to encode.
+		<div className="flex flex-col items-center gap-4 px-5">
+			<div className="text-gray-600 text-center text-xl max-w-2xl">
+				Encode a secret message into a Rubik's cube.
+			</div>
+			<div className="text-gray-500 text-center max-w-2xl">
+				Enter text, binary, or a number to{" "}
+				<b>encode it into a Rubik's cube configuration</b>. Choose your input
+				format and enter the data you want to encode.
 			</div>
 
 			{/* Encoding Format Toggle */}
@@ -155,11 +158,21 @@ export default function EncodePage() {
 				</label>
 				<div className="flex gap-2">
 					<button
+						onClick={() => setEncodingFormat("ascii")}
+						className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
+							encodingFormat === "ascii"
+								? "bg-gray-600 text-white"
+								: "outline-1 text-gray-700 hover:bg-gray-300"
+						}`}
+					>
+						Text (ASCII)
+					</button>
+					<button
 						onClick={() => setEncodingFormat("cubecode")}
 						className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
 							encodingFormat === "cubecode"
-								? "bg-blue-600 text-white"
-								: "bg-gray-200 text-gray-700 hover:bg-gray-300"
+								? "bg-gray-600 text-white"
+								: "outline-1 text-gray-700 hover:bg-gray-300"
 						}`}
 					>
 						CubeCode
@@ -168,21 +181,11 @@ export default function EncodePage() {
 						onClick={() => setEncodingFormat("binary")}
 						className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
 							encodingFormat === "binary"
-								? "bg-blue-600 text-white"
-								: "bg-gray-200 text-gray-700 hover:bg-gray-300"
+								? "bg-gray-600 text-white"
+								: "outline-1 text-gray-700 hover:bg-gray-300"
 						}`}
 					>
 						Binary
-					</button>
-					<button
-						onClick={() => setEncodingFormat("ascii")}
-						className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
-							encodingFormat === "ascii"
-								? "bg-blue-600 text-white"
-								: "bg-gray-200 text-gray-700 hover:bg-gray-300"
-						}`}
-					>
-						Text (ASCII)
 					</button>
 				</div>
 			</div>
@@ -209,7 +212,7 @@ export default function EncodePage() {
 					</div>
 				)}
 				<div className="text-xs text-gray-500">
-					Current value: {input.toString()}
+					Corresponding CubeCode: {input.toString()}
 				</div>
 			</div>
 
@@ -217,11 +220,7 @@ export default function EncodePage() {
 				<button
 					onClick={handleEncode}
 					disabled={isLoading || !getInputValidation() || input === 0n}
-					className={`px-6 py-3 rounded-lg font-medium transition-colors ${
-						isLoading || !getInputValidation() || input === 0n
-							? "bg-gray-400 text-white cursor-not-allowed"
-							: "bg-blue-600 text-white hover:bg-blue-700"
-					}`}
+					className={`px-8 py-3 rounded-lg font-medium transition-colors text-black border-1 hover:bg-gray-200 disabled:opacity-50 w-2xl`}
 				>
 					{isLoading ? "Encoding..." : "Encode"}
 				</button>
@@ -243,8 +242,8 @@ export default function EncodePage() {
 						/>
 					</div>
 					<div className="text-xs text-gray-500 max-w-2xl text-center mt-5">
-						This is the cube configuration that represents your encoded data.
-						Change the input above to encode different data.
+						You should do this algorithm with the white center on top and the
+						green center facing towards you.
 					</div>
 				</div>
 			)}
