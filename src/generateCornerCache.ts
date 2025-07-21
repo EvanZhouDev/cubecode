@@ -22,6 +22,3 @@ export function generateCornerCache() {
 
 	return { evenPerms, oddPerms, getEvenPermIndex, getOddPermIndex };
 }
-
-import fs from "fs";
-fs.writeFileSync("./cornerCache.json", JSON.stringify(generateCornerCache()));
