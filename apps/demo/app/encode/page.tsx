@@ -6,6 +6,7 @@ import Cube from "cubejs";
 import { decodeCube, encodeCube, generateCornerCache } from "@repo/cubecode";
 import Codeblock from "../components/Codeblock";
 import { decode } from "punycode";
+import Link from "next/link";
 
 type EncodingFormat = "cubecode" | "binary" | "ascii";
 
@@ -148,7 +149,12 @@ export default function EncodePage() {
 			<div className="text-gray-500 text-center max-w-2xl">
 				Enter text, binary, or a number to{" "}
 				<b>encode it into a Rubik's cube configuration</b>. Choose your input
-				format and enter the data you want to encode.
+				format and enter the data you want to encode. Ensure your Rubik's cube
+				is solved before using the algorithm. You can use the{" "}
+				<Link href="/solve">
+					<p className="underline inline">Solve</p>
+				</Link>{" "}
+				tool.
 			</div>
 
 			{/* Encoding Format Toggle */}
