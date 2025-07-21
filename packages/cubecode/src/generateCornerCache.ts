@@ -1,4 +1,4 @@
-import { permutation } from "js-combinatorics";
+import { Permutation } from "js-combinatorics";
 import { getFactoradic, getParity } from "./util";
 
 export function generateCornerCache() {
@@ -11,7 +11,7 @@ export function generateCornerCache() {
 		[factoriadic: number]: number;
 	} = {}; // map from the factoradic number representation to the index of that factoradic number in the oddPerms array
 
-	let it = permutation(new Array(8).fill(null).map((x, i) => i)).toArray();
+	let it = new Permutation(new Array(8).fill(null).map((x, i) => i));
 	for (const elem of it) {
 		const parity = getParity(elem);
 		const factoradic = getFactoradic(elem);
