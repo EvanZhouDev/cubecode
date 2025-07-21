@@ -13,10 +13,12 @@ export const metadata: Metadata = {
 const inter = Inter({
 	weight: "variable",
 	variable: "--font-inter",
+	subsets: ["latin"],
 });
 const geo = Geo({
 	weight: "400",
 	variable: "--font-geo",
+	subsets: ["latin"],
 });
 
 export default function RootLayout({
