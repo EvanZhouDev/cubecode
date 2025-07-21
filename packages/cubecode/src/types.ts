@@ -1,6 +1,10 @@
 export type CornerCache = {
 	evenPerms: number[];
 	oddPerms: number[];
-	getEvenPermIndex: number[];
-	getOddPermIndex: number[];
+	getEvenPermIndex: {
+		[factoriadic: number]: number;
+	};
+	getOddPermIndex: {
+		[factoriadic: number]: number;
+	};
 };
