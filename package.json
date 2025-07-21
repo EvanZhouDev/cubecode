@@ -1,9 +1,9 @@
 {
 	"name": "cubecode",
 	"version": "1.0.0",
-	"description": "",
+	"description": "Store data in Rubik's cubes",
 	"license": "AGPL-3.0-only",
-	"author": "",
+	"author": "EvanZhouDev",
 	"type": "module",
 	"main": "index.js",
 	"scripts": {
