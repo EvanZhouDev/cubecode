@@ -23,7 +23,6 @@
 	"devDependencies": {
 		"@repo/eslint-config": "*",
 		"@repo/typescript-config": "*",
-		"@types/js-combinatorics": "^0.5.32",
 		"@types/node": "^22.15.3",
 		"eslint": "^9.31.0",
 		"tsup": "^8.5.0",
