@@ -11,8 +11,8 @@
 		"check-types": "tsc --noEmit"
 	},
 	"dependencies": {
-		"@repo/cubecode": "workspace:*",
-		"@repo/ui": "*",
+		"@repo/cubecode": "*",
+		"cubejs": "^1.3.2",
 		"next": "^15.3.0",
 		"react": "^19.1.0",
 		"react-dom": "^19.1.0"
