@@ -39,6 +39,7 @@ export default function RootLayout({
 						Encode & Decode Secret Messages with Rubik's Cubes
 					</div>
 					<div className="flex flex-row gap-10">
+						<Tab url="/" title="about" color="orange" />
 						<Tab url="/decode" title="decode" color="green" />
 						<Tab url="/encode" title="encode" color="red" />
 						<Tab url="/solve" title="solve" color="blue" />
