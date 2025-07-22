@@ -18,7 +18,8 @@
 		"lint": "eslint . --max-warnings 0",
 		"check-types": "tsc --noEmit",
 		"build": "tsup ./src/index.ts --format cjs,esm --dts",
-		"dev": "tsup ./src/index.ts --format cjs,esm --dts --watch"
+		"dev": "tsup ./src/index.ts --format cjs,esm --dts --watch",
+		"test": "vitest run"
 	},
 	"devDependencies": {
 		"@repo/eslint-config": "*",
@@ -26,7 +27,8 @@
 		"@types/node": "^22.15.3",
 		"eslint": "^9.31.0",
 		"tsup": "^8.5.0",
-		"typescript": "5.8.2"
+		"typescript": "5.8.2",
+		"vitest": "^3.2.4"
 	},
 	"dependencies": {
 		"js-combinatorics": "^2.1.2"
