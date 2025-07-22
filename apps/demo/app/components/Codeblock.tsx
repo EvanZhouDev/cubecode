@@ -10,8 +10,8 @@ export default function Codeblock({
 	return (
 		<div className="flex w-full flex-col">
 			<div className="flex justify-between items-center mb-2">
-				<h3 className="text-lg font-semibold">{title}</h3>
-				<span className="text-sm text-gray-400">{description}</span>
+				<h3 className="text-xs md:text-lg font-semibold">{title}</h3>
+				<span className="text-xs md:text-sm text-gray-400">{description}</span>
 			</div>
 			<div className="bg-gray-50 dark:bg-white/10 p-2 rounded-lg border mb-4 relative flex items-center">
 				<code className="text-sm font-mono break-words flex-1 pr-8 overflow-hidden h-5">
