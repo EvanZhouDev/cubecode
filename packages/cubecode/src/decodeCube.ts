@@ -4,6 +4,10 @@ import { CornerCache } from "./types";
 import { generateCornerCache } from "./generateCornerCache";
 
 export function decodeCube(index: bigint, cornerCache?: CornerCache) {
+	if (index < 0n || index >= 43252003274489856000n)
+		throw new Error(
+			"Invalid CubeCode input. All CubeCodes must be between 0 and 43,252,003,274,489,856,000 - 1."
+		);
 	if (!cornerCache) cornerCache = generateCornerCache();
 
 	const CP_MAX = 20160n;
