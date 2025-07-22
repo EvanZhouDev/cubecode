@@ -142,7 +142,7 @@ export default function CubePicker({
 									: "hover:border-gray-600 cursor-pointer"
 							}`}
 							style={{
-								backgroundColor: faceColor ? COLORS[faceColor] : COLORS.U,
+								backgroundColor: faceColor ? COLORS[faceColor] : COLORS.E,
 							}}
 							onClick={() => updateSquare(index)}
 							disabled={isCenter}
@@ -176,10 +176,10 @@ export default function CubePicker({
 						onClick={() => {
 							if (
 								confirm(
-									"This action will reset any colors you have applied on the cube. Are you sure you want to reset the cube to solved state?"
+									"This action will reset any colors you have applied on the cube. Are you sure you want to reset the cube to the empty state?"
 								)
 							) {
-								setSolvedCube();
+								setEmptyCube();
 							}
 						}}
 						className="px-4 py-2 text-red-600 border border-red-600 rounded-lg hover:border-red-800 dark:hover:border-red-300 transition-colors text-sm"
@@ -293,10 +293,10 @@ export default function CubePicker({
 						onClick={() => {
 							if (
 								confirm(
-									"This action will reset any colors you have applied on the cube. Are you sure you want to reset the cube to solved state?"
+									"This action will reset any colors you have applied on the cube. Are you sure you want to reset the cube to the empty state?"
 								)
 							) {
-								setSolvedCube();
+								setEmptyCube();
 							}
 						}}
 						className="px-4 py-2 text-red-600 border border-red-600 rounded-lg hover:border-red-800 dark:hover:border-red-300 transition-colors text-sm"
