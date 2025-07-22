@@ -1,8 +1,11 @@
 import { decodePermutation } from "./decodePermutation";
 import { decodeOrientation } from "./decodeOrientation";
 import { CornerCache } from "./types";
+import { generateCornerCache } from "./generateCornerCache";
 
-export function decodeCube(index: bigint, cornerCache: CornerCache) {
+export function decodeCube(index: bigint, cornerCache?: CornerCache) {
+	if (!cornerCache) cornerCache = generateCornerCache();
+
 	const CP_MAX = 20160n;
 	const EO_MAX = 2048n;
 	const CO_MAX = 2187n;

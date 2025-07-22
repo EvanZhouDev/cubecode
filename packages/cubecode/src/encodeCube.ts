@@ -1,20 +1,23 @@
 import { encodeOrientation } from "./encodeOrientation";
 import { encodePermutation } from "./encodePermutation";
 import { CornerCache } from "./types";
+import { generateCornerCache } from "./generateCornerCache";
 
-export function encodeCube({
-	ep,
-	cp,
-	eo,
-	co,
-	cornerCache,
-}: {
-	ep: number[];
-	cp: number[];
-	eo: number[];
-	co: number[];
-	cornerCache: CornerCache;
-}): bigint {
+export function encodeCube(
+	{
+		ep,
+		cp,
+		eo,
+		co,
+	}: {
+		ep: number[];
+		cp: number[];
+		eo: number[];
+		co: number[];
+	},
+	cornerCache?: CornerCache
+): bigint {
+	if (!cornerCache) cornerCache = generateCornerCache();
 	// first pack ep & cp, note that parity is automatically handled by encodePermutation
 	const { ep: epFac, cp: cpFac } = encodePermutation({ ep, cp, cornerCache });
 	// then orientations (drop the first piece in each, since it's orientation is determined by the rest of the pieces)
