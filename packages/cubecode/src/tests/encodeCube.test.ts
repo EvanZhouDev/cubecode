@@ -1,7 +1,7 @@
 import path from "path";
 import fs from "fs";
 import { test, expect, describe } from "vitest";
-import { encodeCube } from "../encodeCube";
+import { encodeCube } from "../index";
 
 const expectedCornerCache = JSON.parse(
 	fs.readFileSync(path.join(__dirname, "./expectedCornerCache.json"), "utf-8")
