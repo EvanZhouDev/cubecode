@@ -29,12 +29,14 @@ export default function SolvePage() {
 	const [isLoading, setIsLoading] = useState<boolean>(false);
 
 	// Convert algorithm to alg.cubing.net URL format
-	const getAlgCubingUrl = (algorithm: string): string => {
+	const getAlgCubingUrl = (algorithm: string, setup: string): string => {
 		// Convert prime moves (') to minus (-)
 		const formattedAlg = algorithm.replace(/'/g, "-");
+		const formattedSetup = setup.replace(/'/g, "-");
 		// Encode for URL
 		const encodedAlg = encodeURIComponent(formattedAlg);
-		return `https://alg.cubing.net/?alg=${encodedAlg}&view=playback`;
+		const encodedSetup = encodeURIComponent(formattedSetup);
+		return `https://alg.cubing.net/?alg=${encodedAlg}&setup=${encodedSetup}&view=playback`;
 	};
 
 	// Clear solution when cube changes
@@ -103,18 +105,21 @@ export default function SolvePage() {
 						title="Solution"
 						description="Algorithm to solve your cube."
 					/>
+					<div className="text-md text-center -mt-1 mb-3">
+						Do this algorithm with the <b>white center on top</b> and the{" "}
+						<b>green center facing towards you</b>.
+					</div>
 					{/* Interactive visualization */}
 					<div className="w-full">
 						<iframe
-							src={getAlgCubingUrl(solution)}
+							src={getAlgCubingUrl(solution, Cube.inverse(solution))}
 							className="w-full h-96 border rounded-lg"
 							title="Algorithm Visualization"
 						/>
 					</div>
 					<div className="text-xs text-gray-500 max-w-2xl text-center mt-5 ">
-						You should do this algorithm with the white center on top and the
-						green center facing towards you.<br/>If the algorithm does not work, try again,
-						ensuring that all the colors are filled in correctly.
+						If the algorithm does not work, try again, ensuring that all the
+						colors are filled in correctly.
 					</div>
 				</div>
 			)}

@@ -239,6 +239,10 @@ export default function EncodePage() {
 						title="Algorithm"
 						description="Algorithm for the encrypted state"
 					/>
+					<div className="text-md text-center -mt-1 mb-3">
+						Do this algorithm with the <b>white center on top</b> and the{" "}
+						<b>green center facing towards you</b>.
+					</div>
 					{/* Interactive visualization */}
 					<div className="w-full">
 						<iframe
@@ -248,8 +252,7 @@ export default function EncodePage() {
 						/>
 					</div>
 					<div className="text-xs text-gray-500 max-w-2xl text-center mt-5">
-						You should do this algorithm with the white center on top and the
-						green center facing towards you.
+						Please ensure you have done the algorithm correctly. Any mistake may significantly alter the encoded message.
 					</div>
 				</div>
 			)}
