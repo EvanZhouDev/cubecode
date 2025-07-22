@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
 import "./globals.css";
 import { Inter, Geo } from "next/font/google";
 import Image from "next/image";
 import Tab from "./components/Tab";
+import * as Icon from "react-feather";
 
 export const metadata: Metadata = {
 	title: "Create Next App",
@@ -49,6 +49,27 @@ export default function RootLayout({
 					</div>
 					<div className="w-full max-w-4xl border-1 border-black/40 dark:border-white/40 rounded-2xl py-8">
 						{children}
+					</div>
+					<div className="flex flex-col items-center gap-3 mt-4 opacity-50">
+						<p className="text-center text-sm md:text-base">
+							Lean more about CubeCode, and how it works.
+						</p>
+						<div className="flex flex-row gap-6 items-center">
+							<a
+								href="https://github.com/evanzhoudev/cubecode"
+								className="flex flex-row items-center gap-1 text-sm md:text-base"
+							>
+								<Icon.GitHub className="w-4 h-4" />
+								<span>GitHub</span>
+							</a>
+							<a
+								href="https://youtube.com"
+								className="flex flex-row items-center gap-1 text-sm md:text-base"
+							>
+								<Icon.Youtube className="w-4 h-4" />
+								<span>YouTube (Coming Soon)</span>
+							</a>
+						</div>
 					</div>
 				</div>
 			</body>
