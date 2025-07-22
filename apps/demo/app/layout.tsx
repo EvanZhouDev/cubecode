@@ -29,24 +29,25 @@ export default function RootLayout({
 	return (
 		<html lang="en">
 			<body className={`${inter.variable} ${geo.variable} ${inter.className}`}>
-				<div className="flex flex-col w-screen min-h-screen justify-center items-center gap-5 overflow-auto p-4">
+				<div className="flex flex-col w-screen min-h-screen justify-center items-center gap-5 overflow-auto overflow-x-hidden p-4">
 					<Image
 						src="/logo.svg"
 						width={300}
 						height={100}
 						alt="CubeCode Logo"
+						className="dark:invert"
 						priority
 					/>
-					<div className="inter opacity-50 text-sm">
+					<div className="inter opacity-50 text-xs md:text-sm text-center">
 						Encode & Decode Secret Messages with Rubik's Cubes
 					</div>
-					<div className="flex flex-row gap-10">
+					<div className="flex flex-row md:gap-10 gap-5">
 						<Tab url="/" title="about" color="orange" />
 						<Tab url="/decode" title="decode" color="green" />
 						<Tab url="/encode" title="encode" color="red" />
 						<Tab url="/solve" title="solve" color="blue" />
 					</div>
-					<div className="w-full max-w-4xl border-1 border-black/40 rounded-2xl py-8">
+					<div className="w-full max-w-4xl border-1 border-black/40 dark:border-white/40 rounded-2xl py-8">
 						{children}
 					</div>
 				</div>

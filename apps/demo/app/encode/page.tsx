@@ -143,10 +143,10 @@ export default function EncodePage() {
 
 	return (
 		<div className="flex flex-col items-center gap-4 px-5">
-			<div className="text-gray-600 text-center text-xl max-w-2xl">
+			<div className="text-black dark:text-white text-center text-xl max-w-2xl">
 				Encode a secret message into a Rubik's cube.
 			</div>
-			<div className="text-gray-500 text-center max-w-2xl">
+			<div className="text-gray-500 dark:text-gray-100 text-center max-w-2xl">
 				Enter text, binary, or a number to{" "}
 				<b>encode it into a Rubik's cube configuration</b>. Choose your input
 				format and enter the data you want to encode. Ensure your Rubik's cube
@@ -159,7 +159,7 @@ export default function EncodePage() {
 
 			{/* Encoding Format Toggle */}
 			<div className="flex flex-col gap-4 w-full max-w-2xl">
-				<label className="text-sm font-medium text-gray-700">
+				<label className="text-sm font-medium text-gray-700 dark:text-gray-300">
 					Encoding Format:
 				</label>
 				<div className="flex gap-2">
@@ -167,8 +167,8 @@ export default function EncodePage() {
 						onClick={() => setEncodingFormat("ascii")}
 						className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
 							encodingFormat === "ascii"
-								? "bg-gray-600 text-white"
-								: "outline-1 text-gray-700 hover:bg-gray-300"
+								? "bg-gray-600 dark:bg-gray-700 text-white"
+								: "outline-1 text-gray-700 dark:text-gray-500 hover:bg-gray-800"
 						}`}
 					>
 						Text (ASCII)
@@ -177,8 +177,8 @@ export default function EncodePage() {
 						onClick={() => setEncodingFormat("cubecode")}
 						className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
 							encodingFormat === "cubecode"
-								? "bg-gray-600 text-white"
-								: "outline-1 text-gray-700 hover:bg-gray-300"
+								? "bg-gray-600 dark:bg-gray-700 text-white"
+								: "outline-1 text-gray-700 dark:text-gray-500 hover:bg-gray-800"
 						}`}
 					>
 						CubeCode
@@ -187,8 +187,8 @@ export default function EncodePage() {
 						onClick={() => setEncodingFormat("binary")}
 						className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
 							encodingFormat === "binary"
-								? "bg-gray-600 text-white"
-								: "outline-1 text-gray-700 hover:bg-gray-300"
+								? "bg-gray-600 dark:bg-gray-700 text-white"
+								: "outline-1 text-gray-700 dark:text-gray-500 hover:bg-gray-800"
 						}`}
 					>
 						Binary
@@ -226,7 +226,7 @@ export default function EncodePage() {
 				<button
 					onClick={handleEncode}
 					disabled={isLoading || !getInputValidation() || input === 0n}
-					className={`px-8 py-3 rounded-lg font-medium transition-colors text-black border-1 hover:bg-gray-200 disabled:opacity-50 w-2xl`}
+					className={`px-8 py-3 rounded-lg font-medium transition-colors text-black dark:text-white border-1 hover:bg-gray-200 dark:hover:bg-gray-900 disabled:opacity-50 max-w-2xl w-full`}
 				>
 					{isLoading ? "Encoding..." : "Encode"}
 				</button>

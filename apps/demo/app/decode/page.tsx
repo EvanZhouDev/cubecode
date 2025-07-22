@@ -72,10 +72,10 @@ export default function SolvePage() {
 
 	return (
 		<div className="flex flex-col items-center gap-4 px-5">
-			<div className="text-gray-600 text-center text-xl max-w-2xl">
+			<div className="text-black dark:text-white text-center text-xl max-w-2xl">
 				See what secret message a Rubik's cube contains.
 			</div>
-			<div className="text-gray-500 text-center max-w-2xl">
+			<div className="text-gray-500 dark:text-gray-100 text-center max-w-2xl">
 				Enter the colors <b>exactly as they are on your Rubik's cube</b> below
 				to get the secret message on your cube. Turn your cube to face each side
 				you are coloring in. The direction that is facing up in the diagram
@@ -91,7 +91,7 @@ export default function SolvePage() {
 			<button
 				onClick={getAlgorithm}
 				disabled={isLoading}
-				className={`px-8 py-3 rounded-lg font-medium transition-colors text-black border-1 hover:bg-gray-200 disabled:opacity-50 w-2xl`}
+				className={`px-8 py-3 rounded-lg font-medium transition-colors text-black dark:text-white border-1 hover:bg-gray-200 dark:hover:bg-gray-900 disabled:opacity-50 max-w-2xl w-full`}
 			>
 				Decode Cube
 			</button>

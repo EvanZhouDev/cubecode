@@ -20,7 +20,7 @@ export default function Tab({
 			className={`flex flex-col items-center justify-center flex-1`}
 		>
 			<p
-				className={`geo text-3xl sm:text-5xl ${isActive ? `opacity-100` : "opacity-20 text-black"}`}
+				className={`geo text-3xl sm:text-5xl ${isActive ? `opacity-100` : "opacity-40 text-black dark:text-white"}`}
 				style={isActive ? { color } : {}}
 			>
 				{title}

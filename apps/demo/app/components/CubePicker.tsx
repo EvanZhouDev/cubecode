@@ -124,7 +124,7 @@ export default function CubePicker({
 		className: string = "",
 		isMobile: boolean = false
 	) => {
-		const squareSize = isMobile ? "w-6 h-6" : "w-8 h-8";
+		const squareSize = isMobile ? "w-5 h-5" : "w-8 h-8";
 		const gap = isMobile ? "gap-0.5" : "gap-1";
 
 		return (
@@ -166,7 +166,7 @@ export default function CubePicker({
 					</button>
 					<button
 						onClick={setEmptyCube}
-						className="px-4 py-2 text-black border border-gray-500 rounded-lg hover:border-black transition-colors text-sm"
+						className="px-4 py-2 text-black dark:text-white border border-gray-500 rounded-lg hover:border-black dark:hover:border-white/60 transition-colors text-sm"
 					>
 						Load Empty Cube
 					</button>
@@ -178,8 +178,8 @@ export default function CubePicker({
 								key={color}
 								className={`w-12 h-12 rounded-full border-2 ${
 									selectedColor === color
-										? "border-grey-500"
-										: "border-gray-300"
+										? "border-grey-500 dark:border-gray-400"
+										: "border-gray-300 dark:border-gray-950"
 								} hover:border-gray-500 transition-colors`}
 								style={{ backgroundColor: COLORS[color] }}
 								onClick={() => setSelectedColor(color)}
@@ -220,7 +220,7 @@ export default function CubePicker({
 					{/* Top face (U) with spacer */}
 					<div className="flex gap-2">
 						{renderFace(0, "", true)}
-						<div className="w-18 h-16"></div> {/* Smaller spacer for mobile */}
+						<div className="w-16 h-16"></div> {/* Smaller spacer for mobile */}
 					</div>
 
 					{/* Middle row: L, F, R, B */}
@@ -234,7 +234,7 @@ export default function CubePicker({
 					{/* Bottom face (D) with spacer */}
 					<div className="flex gap-2">
 						{renderFace(45, "", true)}
-						<div className="w-18 h-16"></div> {/* Smaller spacer for mobile */}
+						<div className="w-16 h-16"></div> {/* Smaller spacer for mobile */}
 					</div>
 				</div>
 
@@ -244,10 +244,10 @@ export default function CubePicker({
 						(color) => (
 							<button
 								key={color}
-								className={`w-10 h-10 rounded-full border-2 ${
+								className={`w-8 h-8 rounded-full border-2 ${
 									selectedColor === color
-										? "border-grey-500"
-										: "border-gray-300"
+										? "border-grey-500 dark:border-gray-400"
+										: "border-gray-300 dark:border-gray-950"
 								} hover:border-gray-500 transition-colors`}
 								style={{ backgroundColor: COLORS[color] }}
 								onClick={() => setSelectedColor(color)}
@@ -261,13 +261,13 @@ export default function CubePicker({
 				<div className="flex gap-2 flex-row justify-center px-4">
 					<button
 						onClick={setSolvedCube}
-						className="px-3 py-2 bg-gray-600 text-white rounded-lg hover:bg-gray-700 transition-colors text-sm"
+						className="px-4 py-2 bg-gray-600 text-white rounded-lg hover:bg-gray-700 transition-colors text-sm"
 					>
 						Load Solved Cube
 					</button>
 					<button
 						onClick={setEmptyCube}
-						className="px-3 py-2 text-black border border-gray-500 rounded-lg hover:border-black transition-colors text-sm"
+						className="px-4 py-2 text-black dark:text-white border border-gray-500 rounded-lg hover:border-black dark:hover:border-white/60 transition-colors text-sm"
 					>
 						Load Empty Cube
 					</button>
