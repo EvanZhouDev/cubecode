@@ -6,6 +6,8 @@ export default function Home() {
 				Rubik's cubes, by being able to convert every single Rubik's cube state
 				into a integer in sequence between 0 and 43,252,003,274,489,856,000 - 1.
 				This website allows you to:
+			</p>
+			<ul className="list-disc list-inside w-full">
 				<li>
 					<b>Encode</b> secret messages into a Rubik's cube state
 				</li>
@@ -15,12 +17,14 @@ export default function Home() {
 				<li>
 					<b>Solve</b> Rubik's cubes
 				</li>
+			</ul>
+			<p>
 				This website is designed to be user-friendly for everyone, even if you
 				don't know how to solve a Rubik's cube or how to use Rubik's cube
 				notation, with interactive visualizations and other tools to help you.
 			</p>
 			<h1 className="text-4xl">Tips and Tricks</h1>
-			<p className="text-left w-full">
+			<ul className="list-disc list-inside w-full">
 				<li>
 					All algorithms should be executed with{" "}
 					<b>the white center on top, and the green center in front</b>
@@ -30,7 +34,7 @@ export default function Home() {
 					onto your Rubik's cube. They're just different ways to interpret the
 					data.
 				</li>
-			</p>
+			</ul>
 		</div>
 	);
 }
