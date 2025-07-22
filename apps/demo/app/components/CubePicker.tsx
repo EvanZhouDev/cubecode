@@ -159,14 +159,30 @@ export default function CubePicker({
 			<div className="hidden md:flex flex-row items-center justify-center gap-10 p-5 relative">
 				<div className="flex gap-3 flex-col absolute bottom-0 right-0 p-5">
 					<button
-						onClick={setSolvedCube}
-						className="px-4 py-2 bg-gray-600 text-white rounded-lg hover:bg-gray-700 transition-colors text-sm"
+						onClick={() => {
+							if (
+								confirm(
+									"This action will reset any colors you have applied on the cube. Are you sure you want to reset the cube to solved state?"
+								)
+							) {
+								setSolvedCube();
+							}
+						}}
+						className="px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors text-sm"
 					>
 						Load Solved Cube
 					</button>
 					<button
-						onClick={setEmptyCube}
-						className="px-4 py-2 text-black dark:text-white border border-gray-500 rounded-lg hover:border-black dark:hover:border-white/60 transition-colors text-sm"
+						onClick={() => {
+							if (
+								confirm(
+									"This action will reset any colors you have applied on the cube. Are you sure you want to reset the cube to solved state?"
+								)
+							) {
+								setSolvedCube();
+							}
+						}}
+						className="px-4 py-2 text-red-600 border border-red-600 rounded-lg hover:border-red-800 dark:hover:border-red-300 transition-colors text-sm"
 					>
 						Load Empty Cube
 					</button>
@@ -260,14 +276,30 @@ export default function CubePicker({
 				{/* Load buttons underneath color picker for mobile */}
 				<div className="flex gap-2 flex-row justify-center px-4">
 					<button
-						onClick={setSolvedCube}
-						className="px-4 py-2 bg-gray-600 text-white rounded-lg hover:bg-gray-700 transition-colors text-sm"
+						onClick={() => {
+							if (
+								confirm(
+									"This action will reset any colors you have applied on the cube. Are you sure you want to reset the cube to solved state?"
+								)
+							) {
+								setSolvedCube();
+							}
+						}}
+						className="px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors text-sm"
 					>
 						Load Solved Cube
 					</button>
 					<button
-						onClick={setEmptyCube}
-						className="px-4 py-2 text-black dark:text-white border border-gray-500 rounded-lg hover:border-black dark:hover:border-white/60 transition-colors text-sm"
+						onClick={() => {
+							if (
+								confirm(
+									"This action will reset any colors you have applied on the cube. Are you sure you want to reset the cube to solved state?"
+								)
+							) {
+								setSolvedCube();
+							}
+						}}
+						className="px-4 py-2 text-red-600 border border-red-600 rounded-lg hover:border-red-800 dark:hover:border-red-300 transition-colors text-sm"
 					>
 						Load Empty Cube
 					</button>
