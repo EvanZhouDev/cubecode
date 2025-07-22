@@ -20,18 +20,18 @@ export function encodePermutation({
 	let cpFactoradic = getFactoradic(cp);
 	let cpParity = getParity(cp);
 
-	if (cpParity != epParity) throw new Error("Parities do not match");
+	if (cpParity != epParity) throw new Error("Edge and Corner Permutation Parities do not match");
 
 	// console.log(epFactoradic);
 	if (cpParity == 0) {
 		return {
 			ep: epFactoradic,
-			cp: cornerCache.getEvenPermIndex[cpFactoradic],
+			cp: cornerCache.getEvenPermIndex[cpFactoradic]!,
 		};
 	} else {
 		return {
 			ep: epFactoradic,
-			cp: cornerCache.getOddPermIndex[cpFactoradic],
+			cp: cornerCache.getOddPermIndex[cpFactoradic]!,
 		};
 	}
 }
