@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import CubePicker from "../components/CubePicker";
 import Cube from "cubejs";
-import { decodeCube, encodeCube, generateCornerCache } from "@repo/cubecode";
+import { encodeCube } from "@repo/cubecode";
 import Codeblock from "../components/Codeblock";
 
 export default function SolvePage() {
@@ -61,12 +61,9 @@ export default function SolvePage() {
 			// Note that in the API, "encode" means to turn a cube into a single number
 			// However, in the context of storing a secret message on a Rubik's cube, turning a cube into a number (and/or ASCII) actually means to "decode" it.
 			setDecoded(
-				encodeCube(
-					{
-						...cube.toJSON(),
-					},
-					generateCornerCache()
-				)
+				encodeCube({
+					...cube.toJSON(),
+				})
 			);
 		} catch (error) {
 			console.error("Error solving cube:", error);

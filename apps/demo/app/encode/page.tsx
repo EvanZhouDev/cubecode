@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import CubePicker from "../components/CubePicker";
 import Cube from "cubejs";
-import { decodeCube, encodeCube, generateCornerCache } from "@repo/cubecode";
+import { decodeCube } from "@repo/cubecode";
 import Codeblock from "../components/Codeblock";
 import { decode } from "punycode";
 import Link from "next/link";
@@ -18,25 +18,6 @@ export default function EncodePage() {
 	const [isLoading, setIsLoading] = useState<boolean>(false);
 
 	const MAX_VALUE = 43252003274489856000n - 1n;
-
-	// Initialize with solved cube string - each face has its own color in center, empty elsewhere
-	// CubeJS expects faces in order: U R F D L B
-	const [cubeString, setCubeString] = useState<string>(() => {
-		let state = "";
-		// U face (9 squares) - center is always U (White)
-		for (let i = 0; i < 9; i++) state += i === 4 ? "U" : "E";
-		// R face (9 squares) - center is always R (Red)
-		for (let i = 0; i < 9; i++) state += i === 4 ? "R" : "E";
-		// F face (9 squares) - center is always F (Green)
-		for (let i = 0; i < 9; i++) state += i === 4 ? "F" : "E";
-		// D face (9 squares) - center is always D (Yellow)
-		for (let i = 0; i < 9; i++) state += i === 4 ? "D" : "E";
-		// L face (9 squares) - center is always L (Orange)
-		for (let i = 0; i < 9; i++) state += i === 4 ? "L" : "E";
-		// B face (9 squares) - center is always B (Blue)
-		for (let i = 0; i < 9; i++) state += i === 4 ? "B" : "E";
-		return state;
-	});
 
 	// Update input value when encoding format or input text changes
 	useEffect(() => {
@@ -84,17 +65,13 @@ export default function EncodePage() {
 		return `https://alg.cubing.net/?alg=${encodedAlg}&view=playback`;
 	};
 
-	const handleCubeChange = (newCubeString: string) => {
-		setCubeString(newCubeString);
-	};
-
 	const handleEncode = () => {
 		setIsLoading(true);
 		try {
 			Cube.initSolver();
 			// Note that in the API, "decode" refers to turning a number into a cube state, thus decoding number
 			// However, in the context of this app, you "encode" a number into a cube state, so this page is called "encode".
-			const cubeContent = decodeCube(input, generateCornerCache());
+			const cubeContent = decodeCube(input);
 			console.log(cubeContent);
 			const cube = new Cube({ ...cubeContent, center: [0, 1, 2, 3, 4, 5] });
 			const solutionResult = cube.solve();
@@ -252,7 +229,8 @@ export default function EncodePage() {
 						/>
 					</div>
 					<div className="text-xs text-gray-500 max-w-2xl text-center mt-5">
-						Please ensure you have done the algorithm correctly. Any mistake may significantly alter the encoded message.
+						Please ensure you have done the algorithm correctly. Any mistake may
+						significantly alter the encoded message.
 					</div>
 				</div>
 			)}
