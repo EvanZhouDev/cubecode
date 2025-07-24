@@ -2,13 +2,14 @@ import { decodePermutation } from "./decodePermutation";
 import { decodeOrientation } from "./decodeOrientation";
 import { CornerCache } from "./types";
 import { generateCornerCache } from "./generateCornerCache";
+import { GlobalCache } from "./globalCache";
 
 export function decodeCube(index: bigint, cornerCache?: CornerCache) {
 	if (index < 0n || index >= 43252003274489856000n)
 		throw new Error(
 			"Invalid CubeCode input. All CubeCodes must be between 0 and 43,252,003,274,489,856,000 - 1."
 		);
-	if (!cornerCache) cornerCache = generateCornerCache();
+	if (!cornerCache) cornerCache = GlobalCache.getCornerCache();
 
 	const CP_MAX = 20160n;
 	const EO_MAX = 2048n;

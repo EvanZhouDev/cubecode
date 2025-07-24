@@ -1,7 +1,7 @@
 import { encodeOrientation } from "./encodeOrientation";
 import { encodePermutation } from "./encodePermutation";
 import { CornerCache } from "./types";
-import { generateCornerCache } from "./generateCornerCache";
+import { GlobalCache } from "./globalCache";
 
 export function encodeCube(
 	{
@@ -46,7 +46,7 @@ export function encodeCube(
 		throw new Error("Edge Orientation Parity is incorrect");
 	}
 
-	if (!cornerCache) cornerCache = generateCornerCache();
+	if (!cornerCache) cornerCache = GlobalCache.getCornerCache();
 	// first pack ep & cp, note that parity is automatically handled by encodePermutation
 	const { ep: epFac, cp: cpFac } = encodePermutation({ ep, cp, cornerCache });
 	// then orientations (drop the first piece in each, since it's orientation is determined by the rest of the pieces)
