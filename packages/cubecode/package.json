@@ -1,9 +1,6 @@
 {
 	"name": "@repo/cubecode",
-	"version": "0.0.1",
-	"publishConfig": {
-		"name": "cubecode"
-	},
+	"version": "1.0.0",
 	"exports": {
 		".": {
 			"types": "./dist/index.d.ts",
