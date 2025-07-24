@@ -160,6 +160,8 @@ CubeCode is a proof-of-concept method that is able to encode a Rubik's cube into
 - No illegal cubestates are in the sequence
 - This computation should be relatively cheap and not incredibly intensive/slow to run
 
+### Prerequisites
+
 Keep those key ideas in mind. But before we start, let's go over some prerequisites.
 
 - **General Rubik's Cube Lingo**: You don't have to be a pro cuber, but ensure you understand phrases like:
@@ -202,7 +204,7 @@ Now, let's shift our focus to figuring out how to translate a cubestate to a Cub
 - **Corner Orientation**: There are a total of 7 corners that matter (as explained above). We will arbitrarily select one corner to always ignore. We simply will write the orientations of those 7 corners as a base-3 number.
   - ex. A corner orientation that can be represented as `[0,1,2,0,2,1,1,2]` would be written as $01202112_3$ (subscript meaning "base 3"). This can be converted into the base 10 number $1283$.
 - **Edge Orientation**: Almost exactly the same as Corner Orientation. We will arbitrarily select one edge to always ignore, then write the orientation of the remaining 11 edges as a base-2 number.
-- **Corner Permutation**: In order to encode corner permutation, we simply get a length-8 array of where all the corners are at, and encode it with it's Lehmer Code. Then, we can get it's Index as described above.
+- **Corner Permutation**: In order to encode corner permutation, we simply get a length-8 array of where all the corners are at, and encode it with it's Lehmer Code. Then, we can get it's Index as described [in the prerequisites](#prerequisites).
   - ex. A corner permutation may look like `[4,5,2,1,3,6,7,0]`. Then, we can obtain it's Lehmer Code and it's Index.
 - **Edge Permutation**: Almost exactly the same as Corner Permutation. We will get the permutation of the edges as a length-12 array and encode it with the Lehmer Code to get its Index.
 
@@ -226,7 +228,7 @@ Now, we have 4 numbers. Let's call them $\text{CO}$, $\text{EO}$, $\text{CP}$, a
 \text{CO}_\text{max} = 3^7 \\
 \text{EO}_\text{max} = 2^{11} \\
 \text{EP}_\text{max} = 12! \\
-\text{CP}_\text{max} = \frac{8!}{2} \\
+\text{CP}_\text{max} = \frac{8!}{2}
 ```
 
 Note that we arbitrarily choose divide CP to divide by 2. The [programmatic reason is explained below](#why-do-we-cache-corners).
