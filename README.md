@@ -121,7 +121,7 @@ Then, `decodeCube` will take that CubeCode and turn it into a valid [Cube Format
 
 Under the hood, both `decodeCube` and `encodeCube` require a special cache to speed up the conversion of the CubeCode to the [Cube Format](#cube-format) and vice versa (You can learn more about why this is in the [CubeCode's Math section below](#cubecodes-math)).
 
-However, since this cache is not very big, by default, each method call will generate a new cache and use that cache. But if you need to optimize for performance and milliseconds matter, CubeCode provides a easy way to "actually cache" the data. Here's what it looks like:
+However, since this cache is not very big, by default, the first time either encode or decode are called, the cache will be newly generated and stored in-memory (so the next time the same process calls the method, it'll just use the existing cache). But if you need to optimize for performance and fractions of seconds matter (sometimes that happens!), CubeCode provides a easy way to "actually cache" the data. Here's what it looks like:
 
 ```js
 let cornerCache = generateCornerCache();
