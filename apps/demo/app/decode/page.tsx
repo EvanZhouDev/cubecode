@@ -55,10 +55,12 @@ export default function SolvePage() {
 			// Note that in the API, "encode" means to turn a cube into a single number
 			// However, in the context of storing a secret message on a Rubik's cube, turning a cube into a number (and/or ASCII) actually means to "decode" it.
 			setDecoded(
-				encodeCube({
-					...cube.toJSON(),
-					cornerCache: generateCornerCache(),
-				})
+				encodeCube(
+					{
+						...cube.toJSON(),
+					},
+					generateCornerCache()
+				)
 			);
 		} catch (error) {
 			console.error("Error solving cube:", error);
