@@ -214,7 +214,7 @@ Let's choose the Edges to set arbitrarily and then use the Corners to ensure the
 
 So, again, we have a permutation of just edges—an array of numbers from 0 to 11 (inclusive). With these numbers, we can determine the **parity** of this permutation. In our case, the easiest way is through Lehmer Codes as described above. We can assert that the parity of the Corners matches the parity we have just obtained for the Edges (since the input cubestate _should_ be valid).
 
-So, instead of directly getting the Lehmer Index of the Corner Permutation, we actually want to say, given the parity of the Edge Permutation, which index is the given Corner Permutation in the list of all permutations (ordered by their Index) with the _same parity_?
+So, instead of directly getting the Index of the Corner Permutation, we actually want to say, given the parity of the Edge Permutation, which index is the given Corner Permutation in the list of all permutations (ordered by their Index) with the _same parity_?
 
 As an example, let's say we have a edge parity of even. Let's first get a list of all the Corner Permutations ordered by their Index. We will extract all the Permutations with that same parity of even. Now, we ask what is the index of our current corner permutation in that list?
 
@@ -243,7 +243,7 @@ And now, we have a perfect bijective CubeCode that is guaranteed to be between $
 
 You might be wondering how we are figuring out the index of a certain permutation in all the even permutations or the odd permutations. In order to do this, we will actually be caching every single possibility. We will use a forward map (an array of all even permutations and odd permutations in order) so we can quickly get the `i`th even or odd permutation (explained later in decoding) as well as a reverse map (a map of the index of the corner permutation of the corresponding parity). And in order to save space, we will store the Index of each permutation instead of the permutation itself since it's easily recoverable.
 
-And now, it might be clearer why we are caching corners. Since `8!` entries for each corner is **significantly** (in fact, 11,880 times smaller) than `12!` entries for the edges, it's much more optimal to cache the corners! (Since the actual calculation of the Lehmer Index, parity, and so on is O(1) given the constant number of pieces). By having a forward and reverse map, both encoding and decoding can be O(1) too even with the parity issue.
+And now, it might be clearer why we are caching corners. Since $8!$ entries for each corner is **significantly** (in fact, 11,880 times smaller) than $12!$ entries for the edges, it's much more optimal to cache the corners! (Since the actual calculation of the Lehmer Index, parity, and so on is O(1) given the constant number of pieces). By having a forward and reverse map, both encoding and decoding can be O(1) too even with the parity issue.
 
 ### Going from CubeCode to cubestate
 
@@ -268,3 +268,5 @@ Now, we have recovered the CO, EO, CP, and EP from our CubeCode.
 ### Summary
 
 The process of encoding and decoding CubeCode and cubestates is not too difficult other than managing the parities of the permutations. While the current system is O(1) with caching, it does technically take O(N!) to generate said cache. If anyone wishes to contribute a constant time solution to this without caching, it would be very interesting to see.
+
+Furthermore, it would be interesting to see how this could be applied to higher-order Rubik's cubes i.e. 4x4, 5x5, and so on. Likely, the former problem would have to be solved first before this could be done, so that the speed could be faster.
