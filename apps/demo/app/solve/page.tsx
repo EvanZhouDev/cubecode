@@ -50,6 +50,12 @@ export default function SolvePage() {
 	};
 
 	const getAlgorithm = () => {
+		if (cubeString.includes("E")) {
+			alert(
+				"Cannot solve cube with empty slots. Please fill in all the slots."
+			);
+			return;
+		}
 		setIsLoading(true);
 		try {
 			console.log(cubeString);
