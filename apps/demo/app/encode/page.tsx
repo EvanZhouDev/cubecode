@@ -48,6 +48,7 @@ export default function EncodePage() {
 
 			setInput(newInput);
 		} catch (error) {
+			console.log("Error encoding value:", error);
 			setInput(0n);
 		}
 	}, [inputValue, encodingFormat]);
@@ -78,6 +79,7 @@ export default function EncodePage() {
 			setEncoded(Cube.inverse(solutionResult));
 		} catch (error) {
 			console.error("Error encoding cube:", error);
+			alert(error);
 		} finally {
 			setIsLoading(false);
 		}

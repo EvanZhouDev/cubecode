@@ -29,15 +29,6 @@ export default function SolvePage() {
 	const [decoded, setDecoded] = useState<bigint>(-1n);
 	const [isLoading, setIsLoading] = useState<boolean>(false);
 
-	// Convert algorithm to alg.cubing.net URL format
-	const getAlgCubingUrl = (algorithm: string): string => {
-		// Convert prime moves (') to minus (-)
-		const formattedAlg = algorithm.replace(/'/g, "-");
-		// Encode for URL
-		const encodedAlg = encodeURIComponent(formattedAlg);
-		return `https://alg.cubing.net/?alg=${encodedAlg}&view=playback`;
-	};
-
 	// Clear solution when cube changes
 	useEffect(() => {
 		setDecoded(-1n);
@@ -67,9 +58,7 @@ export default function SolvePage() {
 			);
 		} catch (error) {
 			console.error("Error solving cube:", error);
-			// setDecoded(
-			// 	"Error: Unable to solve cube. Please check the cube configuration."
-			// );
+			alert(error);
 		} finally {
 			setIsLoading(false);
 		}
