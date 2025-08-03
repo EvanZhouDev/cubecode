@@ -4,6 +4,7 @@ import { Inter, Geo } from "next/font/google";
 import Image from "next/image";
 import Tab from "./components/Tab";
 import * as Icon from "react-feather";
+import Link from "next/link";
 
 export const metadata: Metadata = {
 	title: "CubeCode Demo",
@@ -78,6 +79,13 @@ export default function RootLayout({
 								<Icon.Youtube className="w-4 h-4" />
 								<span>YouTube (Coming Soon)</span>
 							</a>
+							<Link
+								href="/secret"
+								className="flex flex-row items-center gap-1 text-sm md:text-base"
+							>
+								<Icon.Lock className="w-4 h-4" />
+								<span>Secret</span>
+							</Link>
 						</div>
 					</div>
 				</div>
