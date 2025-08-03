@@ -1,6 +1,6 @@
 {
 	"name": "@repo/cubecode",
-	"version": "1.0.2",
+	"version": "1.0.3",
 	"description": "Store data on Rubik's cubes.",
 	"exports": {
 		".": {
@@ -9,6 +9,9 @@
 			"require": "./dist/index.js"
 		}
 	},
+	"files": [
+		"dist"
+	],
 	"main": "./dist/index.js",
 	"module": "./dist/index.mjs",
 	"types": "./dist/index.d.ts",
@@ -31,7 +34,6 @@
 	"dependencies": {
 		"js-combinatorics": "^2.1.2"
 	},
-	"type": "module",
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/EvanZhouDev/cubecode.git"
