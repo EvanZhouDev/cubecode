@@ -2,7 +2,7 @@
 
 > Store data on Rubik's cubes.
 
-CubeCode is a proof-of-concept method of storing data in Rubik's cubes, enabled by a one-to-one mapping of every single possible Rubik's cube state to an integer between $0$ and $43,252,003,274,489,856,000 - 1$.
+CubeCode is a proof-of-concept method of storing data in Rubik's cubes, enabled by a one-to-one mapping of every single possible Rubik's cube state to an integer between 0 and 43,252,003,274,489,856,000 - 1.
 
 This enables interesting functionality like being able to share a state of a cube with just a (relatively) short number, being able to store a secret message with ASCII on a single 3x3, and even being able to store larger pieces of data on multiple 3x3s.
 
