@@ -1,6 +1,7 @@
 {
 	"name": "@repo/cubecode",
-	"version": "1.0.1",
+	"version": "1.0.2",
+	"description": "Store data on Rubik's cubes.",
 	"exports": {
 		".": {
 			"types": "./dist/index.d.ts",
@@ -29,5 +30,20 @@
 	},
 	"dependencies": {
 		"js-combinatorics": "^2.1.2"
-	}
+	},
+	"type": "module",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/EvanZhouDev/cubecode.git"
+	},
+	"keywords": [
+		"code",
+		"rubiks-cube"
+	],
+	"author": "EvanZhouDev",
+	"license": "AGPL-3.0-only",
+	"bugs": {
+		"url": "https://github.com/EvanZhouDev/cubecode/issues"
+	},
+	"homepage": "https://github.com/EvanZhouDev/cubecode#readme"
 }
