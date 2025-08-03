@@ -6,7 +6,8 @@
 		"build": {
 			"dependsOn": ["^build"],
 			"inputs": ["$TURBO_DEFAULT$", ".env*"],
-			"outputs": [".next/**", "!.next/cache/**", "dist/**"]
+			"outputs": [".next/**", "!.next/cache/**", "dist/**"],
+			"env": ["SECRET_PASSWORD", "SECRET_MESSAGE"]
 		},
 		"lint": {
 			"dependsOn": ["^lint"]
