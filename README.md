@@ -31,7 +31,7 @@ This will help introduce you to some of the nice features of CubeCode.
 
 ## NPM Package
 
-The main features of CubeCode, going between a cubestate and an integer between $0$ and $43,252,003,274,489,856,000 - 1$, is available as a NPM package. Install it on NPM, or your favorite package manager:
+The main features of CubeCode, going between a cubestate and an integer between $0$ and $43,252,003,274,489,856,000 - 1$, is available as a [NPM package](https://www.npmjs.com/package/cubecode). Install it on NPM, or your favorite package manager:
 
 ```bash
 npm i cubecode

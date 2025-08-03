@@ -80,11 +80,11 @@ export default function RootLayout({
 								<span>YouTube</span>
 							</a>
 							<a
-								href="https://www.npmjs.com/"
+								href="https://www.npmjs.com/package/cubecode"
 								className="flex flex-row items-center gap-1 text-sm md:text-base"
 							>
 								<Icon.Package className="w-4 h-4" />
-								<span>NPM (Coming Soon)</span>
+								<span>NPM</span>
 							</a>
 							<Link
 								href="/secret"
