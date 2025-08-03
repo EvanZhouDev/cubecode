@@ -14,7 +14,7 @@ export default async function SecretPage({ searchParams }: SecretPageProps) {
 				Enter my password to unlock hidden content.
 			</div>
 			<div className="text-gray-500 dark:text-gray-100 text-center max-w-2xl">
-				In the CubeCode YouTube Video, I said the Rubik's cube I showed was my password. Figure out the password/secret message on that cube, and enter it below.
+				At the start of the <a href="https://www.youtube.com/watch?v=l9ZStTs914k" className="underline!">CubeCode YouTube Video</a>, I said the Rubik's cube I showed was my password. Figure out the password/secret message on that cube, and enter it below.
 			</div>
 
 			{message && (

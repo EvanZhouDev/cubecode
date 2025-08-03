@@ -73,11 +73,18 @@ export default function RootLayout({
 								<span>GitHub</span>
 							</a>
 							<a
-								href="https://youtube.com"
+								href="https://www.youtube.com/watch?v=l9ZStTs914k"
 								className="flex flex-row items-center gap-1 text-sm md:text-base"
 							>
 								<Icon.Youtube className="w-4 h-4" />
-								<span>YouTube (Coming Soon)</span>
+								<span>YouTube</span>
+							</a>
+							<a
+								href="https://www.npmjs.com/"
+								className="flex flex-row items-center gap-1 text-sm md:text-base"
+							>
+								<Icon.Package className="w-4 h-4" />
+								<span>NPM (Coming Soon)</span>
 							</a>
 							<Link
 								href="/secret"

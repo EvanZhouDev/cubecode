@@ -9,6 +9,12 @@ CubeCode is a proof-of-concept method of storing data in Rubik's cubes, enabled 
 
 This enables interesting functionality like being able to share a state of a cube with just a (relatively) short number, being able to store a secret message with ASCII on a single 3x3, and even being able to store larger pieces of data on multiple 3x3s.
 
+## Watch How it was Made
+
+> Do you think you know Rubik's cubes well? Up for a challenge? **Decode** the Rubik's cube shown in the video at the start and put it into the [Secret Page](https://cubecode.vercel.app/secret) to unlock a secret message from me!
+
+A basic overview of CubeCode and some interesting usecases are documented in the [YouTube video](https://www.youtube.com/watch?v=l9ZStTs914k). Check it out!
+
 ## Try it Out
 
 > You don't need to know how to solve a Rubik's cube to use the CubeCode demo! Interactive tutorials and a built-in solver will help you use it without any prior knowledge.
